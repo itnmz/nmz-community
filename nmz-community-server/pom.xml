@@ -29,28 +29,54 @@
     <properties>
         <java.version>17</java.version>
     </properties>
+
+
+
     <dependencies>
+        <!-- Spring MVC Web 开发支持：内嵌 Tomcat、REST 接口、Jackson JSON 序列化等 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
 
+        <!-- JDBC 数据访问支持：自动配置 DataSource、JdbcTemplate，并提供事务管理 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!-- MySQL 官方 JDBC 驱动：仅运行期需要，不参与编译 -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- Lombok：编译期注解处理器，用注解自动生成 getter/setter/构造器等样板代码 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!-- Web MVC 测试支持：提供 JUnit、MockMvc、AssertJ 等，仅测试期使用 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+
+
+
+
+
+
+
+
+
+
 
     <build>
         <plugins>

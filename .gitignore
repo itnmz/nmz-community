@@ -23,6 +23,8 @@ dist-ssr/
 npm-debug.log*
 pnpm-debug.log*
 yarn-error.log*
+
+# ---- 系统缓存 ----
 .DS_Store
 
 # ---- 环境与密钥 ----
