@@ -1,0 +1,32 @@
+# ---- Java / Maven ----
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+*.log
+
+# ---- IDE ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# ---- Node / 前端 ----
+node_modules/
+dist/
+dist-ssr/
+.pnpm-store/
+*.local
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+.DS_Store
+
+# ---- 环境与密钥 ----
+.env
+.env.*
+!.env.example
+*.pem
