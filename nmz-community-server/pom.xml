@@ -32,6 +32,8 @@
 
 
 
+
+
     <dependencies>
         <!-- Spring MVC Web 开发支持：内嵌 Tomcat、REST 接口、Jackson JSON 序列化等 -->
         <dependency>
@@ -64,6 +66,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- MyBatis-Plus（Spring Boot 4 专用启动器，注意 artifactId 不是 mybatis-plus-boot-starter） -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot4-starter</artifactId>
+            <version>3.5.17</version>
+        </dependency>
+
+        <!-- Swagger UI：方便前后端联调时直接试接口 -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>3.2.0</version>
         </dependency>
     </dependencies>
 
