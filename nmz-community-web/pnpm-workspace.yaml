@@ -1,0 +1,4 @@
+# pnpm 12 的构建脚本白名单（旧版本叫 onlyBuiltDependencies / ignoredBuiltDependencies）
+# @parcel/watcher 来自 sass/rolldown，仅用于文件监听，允许其 postinstall 即可
+allowBuilds:
+  '@parcel/watcher': true

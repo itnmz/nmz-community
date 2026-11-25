@@ -1,0 +1,112 @@
+@use './variables.scss' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: $text-primary;
+  background: $bg-page;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ============ 认证表单（登录 / 注册共用） ============ */
+.form-title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.4px;
+}
+
+.form-subtitle {
+  margin: 10px 0 32px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+.auth-form {
+  --el-color-primary: #{$brand-color};
+  --el-font-size-base: 15px;
+
+  .el-form-item {
+    margin-bottom: 18px;
+  }
+
+  .el-input__wrapper {
+    height: 52px;
+    padding: 0 16px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px #e5e7eb inset;
+    transition: box-shadow 0.2s;
+  }
+
+  .el-input__wrapper:hover {
+    box-shadow: 0 0 0 1px #c7cbd4 inset;
+  }
+
+  .el-input__wrapper.is-focus {
+    box-shadow: 0 0 0 1.5px #{$brand-color} inset;
+  }
+
+  .el-input__inner {
+    font-size: 15px;
+  }
+
+  .el-form-item__error {
+    padding-top: 4px;
+    padding-left: 4px;
+    font-size: 12px;
+  }
+}
+
+.submit-btn.el-button {
+  width: 100%;
+  height: 52px;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #5b47f5, #7c6cf7);
+  border: none;
+  border-radius: 999px;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(1.06);
+  }
+
+  &.is-loading {
+    opacity: 0.85;
+  }
+}
+
+/* 表单下方的辅助行 */
+.form-helper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -6px 0 18px;
+  font-size: 13px;
+  color: #9ca3af;
+}
