@@ -3,10 +3,19 @@
 -- VALUES 
 -- (1, 'admin', '$2a$10$7JB720yubVSZvVD0kmupSeOQ30.M5m0m/k56sYg2/5/QY/rD5pT3S', '社区管理员', 
 -- 	'https://api.dicebear.com/7.x/identicon/svg?seed=admin', 'ADMIN', 1);
-INSERT INTO `nmz_user` (`id`, `username`, `password`, `nickname`, `avatar`, `role`, `status`)
-VALUES 
-(1, 'admin', '$2a$10$7JB720yubVSZvVD0kmupSeOQ30.M5m0m/k56sYg2/5/QY/rD5pT3S', '社区管理员', 
-	'https://ibb.co/gLCBJrF3', 'ADMIN', 1);
+# INSERT INTO `nmz_user` (`id`, `username`, `password`, `nickname`, `avatar`, `role`, `status`)
+# VALUES
+# (1, 'admin', '$2a$10$7JB720yubVSZvVD0kmupSeOQ30.M5m0m/k56sYg2/5/QY/rD5pT3S', '社区管理员',
+# 	'https://ibb.co/gLCBJrF3', 'ADMIN', 1);
+INSERT INTO `nmz_user` (`id`, `phone`, `password`, `nickname`, `avatar`, `role`, `status`)
+VALUES
+    (1, '12242397433', '$2a$10$7JB720yubVSZvVD0kmupSeOQ30.M5m0m/k56sYg2/5/QY/rD5pT3S', '奈美子',
+     'https://ibb.co/gLCBJrF3', 'ADMIN', 1);
+# 更新
+update nmz_user
+set phone = '18254026339'
+where id = 1;
+
 
 -- 2. 初始化核心板块分类
 INSERT INTO `nmz_category` (`id`, `name`, `icon`, `description`)

@@ -5,7 +5,11 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 社区评论表
@@ -13,6 +17,11 @@ import lombok.Data;
  */
 @TableName(value ="nmz_comment")
 @Data
+@Builder
+//无参构造方法(Jackson 反序列化 JSON（接收前端 @RequestBody）或 MyBatis-Plus 反射实例化对象时报错)
+@NoArgsConstructor
+//@Builder 依赖全参构造
+@AllArgsConstructor
 public class Comment {
     /**
      * 主键ID

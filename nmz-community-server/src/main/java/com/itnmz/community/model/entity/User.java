@@ -5,7 +5,13 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 /**
  * 用户表
@@ -13,6 +19,11 @@ import lombok.Data;
  */
 @TableName(value ="nmz_user")
 @Data
+@Builder
+//无参构造方法(Jackson 反序列化 JSON（接收前端 @RequestBody）或 MyBatis-Plus 反射实例化对象时报错)
+@NoArgsConstructor
+//@Builder 依赖全参构造
+@AllArgsConstructor
 public class User {
     /**
      * 主键ID
@@ -21,13 +32,15 @@ public class User {
     private Long id;
 
     /**
-     * 登录用户名/账号
+     * 账号/手机号
      */
-    private String username;
+    private String phone;
 
     /**
      * BCrypt加密密码
+     * @JsonIgnore：序列化和反序列化时忽略该字段
      */
+    @JsonIgnore
     private String password;
 
     /**

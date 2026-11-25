@@ -32,3 +32,6 @@ yarn-error.log*
 .env.*
 !.env.example
 *.pem
+
+# 本地截图（调试用）
+.shots/

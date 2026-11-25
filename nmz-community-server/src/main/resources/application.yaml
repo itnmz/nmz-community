@@ -11,22 +11,33 @@ spring:
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:224239}
 
+  # 注意：Boot 4 的路径是 spring.data.redis，不是老版本的 spring.redis
+  data:
+    redis:
+      host: 192.168.100.129
+      port: 6379
+      password: 224239         # 如果本地没设密码则留空
+      database: 1         # 指定使用的 Redis 数据库编号(0-15)DB1
+      timeout: 3000ms     # 连接超时时间
+      lettuce:
+        pool:
+          max-active: 8   # 连接池最大连接数
+#          max-wait: -1ms  # 最大阻塞等待时间(-1表示不限制)
+          max-idle: 10     # 最大空闲连接
+          min-idle: 1     # 最小空闲连接
+
   jackson:
     default-property-inclusion: non_null # JSON 序列化时忽略 null 字段
 
-#    mybatis-plus:
-#      type-aliases-package: com.itnmz.community.entity
+# JWT 配置：secret 必须至少 32 字节，否则 JwtUtil 启动即抛异常
+nmz:
+  jwt:
+    secret: ${JWT_SECRET:nmz-community-dev-secret-2026-change-me-in-prod}
+    expire-minutes: 1440
 
-# 现阶段不使用 Redis / RabbitMQ
-#  redis:
-#    host: 127.0.0.1
-#    port: 6379
-#    password: 224239
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: itheima
-#    password: 123321
+# 短信调试开关
+sms:
+  mock: true # true：验证码只打印到控制台；接真实短信服务商时改 false
 
 logging:
   level:

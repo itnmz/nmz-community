@@ -14,6 +14,12 @@ CREATE TABLE `nmz_user` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_username` (`username`)
 ) COMMENT='用户表';
+-- 1.将 username 字段更名为 phone，并调整长度为 11 位
+ALTER TABLE `nmz_user`
+    CHANGE COLUMN `username` `phone` VARCHAR(11) NOT NULL COMMENT '手机号(登录账号)';
+-- 2. 重命名唯一约束索引（先删旧索引，再加新索引）
+ALTER TABLE `nmz_user` DROP INDEX `uk_username`;
+ALTER TABLE `nmz_user` ADD UNIQUE KEY `uk_phone` (`phone`);
 
 
 -- 2. 分类表 (nmz_category)
